@@ -23,6 +23,13 @@ define('DB_CHARSET', 'utf8mb4');
 // The backup job calls: export.php?token=YOUR_TOKEN
 define('EXPORT_TOKEN', 'REPLACE_WITH_64_HEX_CHARS');
 
+// --- Meta Model API (AutoCode Copilot) ---
+// Create a key in the Meta developer dashboard (dev.meta.ai -> API keys).
+// Leave the placeholder to keep Copilot disabled. NEVER commit a real key.
+define('MODEL_API_KEY', 'REPLACE_WITH_YOUR_MODEL_API_KEY');
+define('META_MODEL_API_BASE', 'https://api.meta.ai/v1');
+define('META_MODEL_ID', 'muse-spark-1.3');
+
 // --- App ---
 define('APP_TIMEZONE', 'America/Los_Angeles');
 // Public base URL of the app, no trailing slash. Used for absolute links in PDFs.

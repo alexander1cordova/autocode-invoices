@@ -18,6 +18,24 @@ plain PHP 8 + MySQL, built for Hostinger shared hosting.
 > via the Meta Model API, with the technician approving every AI output first.
 > This repository is the production foundation that Copilot will build on.
 
+## AutoCode Copilot (skeleton — in development)
+
+First integration step for the hackathon project described above:
+
+- `lib/meta_api.php` — the only module that talks to the Meta Model API
+  (`https://api.meta.ai/v1`, OpenAI-compatible Chat Completions, cURL, one
+  retry on 429/5xx). Includes strict-JSON extraction plus local validation:
+  VIN format, DTC format (`^[PBCU][0-9]{4}$`); anything the model returns
+  that fails validation is dropped with a warning. The model never sets prices.
+- `copilot.php` — login-protected page: report photo + technician note in
+  Spanish → structured draft (vehicle, VIN, DTCs, diagnosis, plain-English
+  customer explanation, suggested estimate lines) shown for **human review**.
+  Nothing is written to the database from this page yet.
+- Enable it by setting `MODEL_API_KEY` in the server's `config.php`
+  (see `config.sample.php`) — the key never lives in this repository.
+- Check the wiring any time with: `php tools/copilot-smoke.php`
+  (offline self-test + live `/v1/models` and chat check when a key exists).
+
 ## Requirements
 
 - PHP 8.0+ with extensions: `pdo_mysql`, `mbstring`, `gd` (gd only needed if you
