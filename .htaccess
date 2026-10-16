@@ -1,0 +1,12 @@
+# AutoCode Invoices — private app. No directory listings, no direct config access.
+Options -Indexes
+
+<Files "config.php">
+    Require all denied
+</Files>
+<Files "config.sample.php">
+    Require all denied
+</Files>
+<Files "install.lock">
+    Require all denied
+</Files>

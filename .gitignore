@@ -1,0 +1,15 @@
+# Real configuration — NEVER commit
+config.php
+install.lock
+
+# Runtime uploads (customer signatures / photos)
+uploads/signatures/*
+uploads/photos/*
+!uploads/.htaccess
+
+# Backups / exports
+*.json.bak
+backups/
+
+# OS / editor
+.DS_Store
