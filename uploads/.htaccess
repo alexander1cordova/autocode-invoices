@@ -1,0 +1,3 @@
+# Signature images are served through file.php (login required).
+# Block direct HTTP access to this directory.
+Require all denied
